@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeetMetric</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="stylesheet.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <header class="card-header">
+        <div class="brand">
+          <div class="logo">LM</div>
+          <div>
+            <h1>LeetMetric</h1>
+            <p class="subtitle">LeetCode stats, clean & fast.</p>
+          </div>
+        </div>
+
+        <a class="gh" href="#" target="_blank" rel="noreferrer">GitHub</a>
+      </header>
+
+      <div class="search">
+        <label class="label" for="username-input">LeetCode username</label>
+        <div class="search-row">
+          <input type="text" placeholder="e.g. your_username" id="username-input" autocomplete="off" />
+          <button id="fetch-button" class="btn">
+            <span class="btn-text">Fetch</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+        </div>
+        <p class="hint">Tip: press <kbd>Enter</kbd> to fetch.</p>
+        <p class="error" id="error"></p>
+      </div>
+
+      <!-- Profile header (shown after fetch) -->
+      <section class="profile hidden" id="profile">
+        <div class="avatar" id="avatar">LC</div>
+        <div class="profile-meta">
+          <p class="profile-name" id="profile-name">username</p>
+          <p class="profile-sub" id="profile-sub">Public profile</p>
+        </div>
+        <div class="pill" id="pill">Fetched</div>
+      </section>
+
+      <!-- Loading skeleton -->
+      <section class="skeleton hidden" id="skeleton">
+        <div class="sk-row">
+          <div class="sk sk-avatar"></div>
+          <div class="sk-lines">
+            <div class="sk sk-line"></div>
+            <div class="sk sk-line short"></div>
+          </div>
+        </div>
+
+        <div class="sk-grid">
+          <div class="sk sk-ring"></div>
+          <div class="sk sk-ring"></div>
+          <div class="sk sk-ring"></div>
+        </div>
+
+        <div class="sk-cards">
+          <div class="sk sk-card"></div>
+          <div class="sk sk-card"></div>
+        </div>
+      </section>
+
+      <section class="content" id="content">
+        <section class="progress">
+          <div class="ring">
+            <div class="circle easy-progress">
+              <span class="ring-label easy-label">0 / 0</span>
+            </div>
+            <p class="ring-title">Easy</p>
+          </div>
+
+          <div class="ring">
+            <div class="circle medium-progress">
+              <span class="ring-label medium-label">0 / 0</span>
+            </div>
+            <p class="ring-title">Medium</p>
+          </div>
+
+          <div class="ring">
+            <div class="circle hard-progress">
+              <span class="ring-label hard-label">0 / 0</span>
+            </div>
+            <p class="ring-title">Hard</p>
+          </div>
+        </section>
+
+        <section class="stats-cards" id="stats-cards">
+          <article class="stat">
+            <p class="stat-title">Total Solved</p>
+            <p class="stat-value" id="total-solved">0</p>
+          </article>
+
+          <article class="stat">
+            <p class="stat-title">Acceptance Rate</p>
+            <p class="stat-value" id="acceptance">0%</p>
+          </article>
+        </section>
+      </section>
+
+      <footer class="footer">
+        <p>LeetMetric • LeetCode-style UI</p>
+      </footer>
+    </section>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
